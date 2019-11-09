@@ -91,8 +91,7 @@ def segmentwithtag(line):#词性标注
 
 
 def process():
-	# myclient=pymongo.MongoClient("mongodb://localhost:27017/")
-	myclient=pymongo.MongoClient("mongodb://corpus.bhu.edu.cn:9100/")
+	myclient=pymongo.MongoClient("mongodb://localhost:27017/")
 	mydb=myclient["ComparativeSentenceCorpus"]
 	collection = mydb["digitalCar"]
 	meragefiledir = os.getcwd()+'\\cars'
