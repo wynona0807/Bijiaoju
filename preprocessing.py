@@ -54,10 +54,24 @@ def dataProcess(filename,tpyename,classname,testAnswer, collection):
 		dic={}
 		if( Id in testAnswer):
 			dic={"Id":Id,"sentence":sentence,"tpyename":tpyename,"classname":classname,"segment":segline,"segmentwithtag":segtag,"answer":testAnswer[Id]}
+			getsegment=[]
+			for key,value in dic:
+
+				if 1 in dic:
+					getsegment=dic["segmentwithtag"]
+					print(getsegment)
+
+			# for key,value in dic:
 		else:
 			dic={"Id":Id,"sentence":sentence,"tpyename":tpyename,"classname":classname,"segment":segline,"segmentwithtag":segtag,"answer":-1}
 		print(dic)
-		
+		# getDict={(key,value) for key,value in dic.items() if value > 200}
+		# getsegment=[]
+		# gt200={key:value for key,value in dic.items() if answer > 200}
+		# for key,value in dic:
+		# 	if value["answer"] = 1：
+
+				# print(dic.values("segmentwithtag"))
 		collection.insert_one(dic)
 
 
@@ -173,6 +187,4 @@ if __name__ == '__main__':
 	process()
 	# testMethod()
 	# select()
-
-	
-	
+	dataProcess()	
