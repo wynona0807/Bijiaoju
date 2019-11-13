@@ -54,12 +54,20 @@ def dataProcess(filename,tpyename,classname,testAnswer, collection):
 		dic={}
 		if( Id in testAnswer):
 			dic={"Id":Id,"sentence":sentence,"tpyename":tpyename,"classname":classname,"segment":segline,"segmentwithtag":segtag,"answer":testAnswer[Id]}
-			getsegment=[]
-			for key,value in dic:
+			# getsegment=[]
+			# for key,value in dic:
 
-				if 1 in dic:
-					getsegment=dic["segmentwithtag"]
-					print(getsegment)
+			# 	if 1 in dic:
+			# 		getsegment=dic["segmentwithtag"]
+			# 		print(getsegment)
+			match_data = {}#将提取的预料放置在新的字典里
+
+			for (key, value) in dic.items():#网上查询的获取方法
+				if dic["answer"] is 1:
+					match_data[key] = dic["segmentwithtag"]
+
+					print(match_data)
+			# print(dic)
 
 			# for key,value in dic:
 		else:
